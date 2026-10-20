@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookBridge – Books deserve a second chapter</title>
+<meta name="description" content="BookBridge helps students find, buy, exchange or give away used books.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home">
+<a class="skip" href="#browse">Skip to books</a>
+<header>
+ <div class="container nav">
+  <a href="#home" class="logo" aria-label="BookBridge home"><i class="fa-solid fa-book-open" aria-hidden="true"></i>BookBridge</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><i class="fa-solid fa-bars"></i></button>
+  <nav class="nav-menu" id="navMenu" aria-label="Main">
+   <ul class="nav-links">
+    <li><a href="#home">Home</a></li><li><a href="#browse">Browse Books</a></li><li><a href="#free-shelf">Free Shelf</a></li><li><a href="#how">How It Works</a></li><li><a href="contact.html">Contact</a></li><li><a href="list-book.html">Share a Book</a></li>
+   </ul>
+   <div class="nav-actions"><a href="profile.html" class="icon-btn" aria-label="My profile"><i class="fa-regular fa-user"></i></a><a href="login.html" class="btn btn-outline btn-sm">Log In</a><a href="register.html" class="btn btn-primary btn-sm">Register</a></div>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+ <div>
+  <span class="badge"><i class="fa-solid fa-leaf" aria-hidden="true"></i>Give books a second life</span>
+  <h1>Books deserve a second chapter.</h1>
+  <p class="lead">BookBridge connects students who want to find, buy, swap or give away used books, so study materials stay affordable and good books never gather dust.</p>
+  <div class="hero-btns"><a href="#browse" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i>Find a Book</a><a href="list-book.html" class="btn btn-outline"><i class="fa-solid fa-hand-holding-heart"></i>Share a Book</a></div>
+  <div class="community"><div class="avatars" aria-hidden="true"><span style="background:#3f7d58">A</span><span style="background:#c98a4b">M</span><span style="background:#2f4a5c">S</span><span style="background:#8a5a44">R</span></div>Made for students, by students</div>
+ </div>
+ <div class="hero-visual">
+  <img src="images/hero-lending.jpg" alt="Two students passing a book to each other in a bright reading room">
+  <div class="float-card b"><span class="ic"><i class="fa-solid fa-recycle"></i></span><div><strong>Reuse, don't waste</strong><small>Every swap saves a book</small></div></div>
+  <div class="float-card a"><span class="ic"><i class="fa-solid fa-people-group"></i></span><div><strong>Student community</strong><small>Swap with classmates</small></div></div>
+ </div>
+</div></section>
+
+<section class="impact" aria-labelledby="impactT"><div class="container">
+ <h2 id="impactT" class="sr" style="position:absolute;left:-999px">Our impact</h2>
+ <div class="impact-box">
+  <div><i class="fa-solid fa-book" aria-hidden="true"></i><strong>248+</strong>Books Reused</div>
+  <div><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><strong>126+</strong>Students Helped</div>
+  <div><i class="fa-solid fa-gift" aria-hidden="true"></i><strong>85+</strong>Free Books</div>
+ </div>
+</div></section>
+
+<section id="browse"><div class="container">
+ <div class="head"><h2>Find a book you'll love</h2><p>Search by title, author or category, or pick a shelf below.</p></div>
+ <form class="search" role="search" id="searchForm">
+  <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+  <label for="searchInput" style="position:absolute;left:-999px">Search books</label>
+  <input type="search" id="searchInput" autocomplete="off" placeholder="Search books, authors or categories">
+  <button class="btn btn-primary btn-sm" type="submit">Search</button>
+ </form>
+ <div class="filters" id="quick" role="group" aria-label="Quick shelves"></div>
+ <div class="scope" id="scopeBar" hidden><button class="back" id="backBtn" type="button"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>All categories</button><div><h3 id="scopeTitle"></h3><p class="muted" id="scopeDesc"></p></div></div>
+ <div id="catSection"><h3 class="sub-title">Popular categories</h3><div class="cat-grid" id="catGrid"></div><div class="center" style="margin-top:24px"><button class="btn btn-outline btn-sm" id="moreCats" type="button" aria-expanded="false"></button></div></div>
+ <div id="catMatches" hidden><h3 class="sub-title">Matching categories</h3><div class="cat-grid" id="catMatchGrid"></div></div>
+  <div class="toolbar" id="toolbar" hidden>
+  <p class="results" id="results" aria-live="polite" hidden></p>
+  <label class="sort" for="sortSel">Sort by
+   <select id="sortSel"><option value="">Featured</option><option value="low">Price: low to high</option><option value="cond">Best condition</option><option value="az">Title A to Z</option></select>
+  </label>
+ </div>
+ <div class="grid" id="bookGrid" hidden></div>
+</div></section>
+
+<section class="how" id="how"><div class="container">
+ <div class="head"><h2>How BookBridge works</h2><p>Three simple steps from shelf to student.</p></div>
+ <div class="steps">
+  <article class="step"><img class="step-img" src="images/step-find.jpg" alt="Magnifying glass over a stack of books" loading="lazy"><span class="num">01</span><div class="ic"><i class="fa-solid fa-magnifying-glass"></i></div><h3>Find a Book</h3><p>Search or browse listings for the textbooks and novels you need, sorted by condition and price.</p></article>
+  <article class="step"><img class="step-img" src="images/step-connect.jpg" alt="Two chat bubbles between students" loading="lazy"><span class="num">02</span><div class="ic"><i class="fa-solid fa-comments"></i></div><h3>Connect</h3><p>Message the student who listed it and agree to buy, swap or collect it on campus.</p></article>
+  <article class="step"><img class="step-img" src="images/step-give.jpg" alt="Two students passing a book to each other" loading="lazy"><span class="num">03</span><div class="ic"><i class="fa-solid fa-house-chimney"></i></div><h3>Give It a New Home</h3><p>Pass on books you have finished with, so the next student can start their chapter.</p></article>
+ </div>
+</div></section>
+
+<section id="free-shelf" style="padding-top:0"><div class="container"><div class="shelf">
+ <div>
+  <h2>The Free Shelf</h2>
+  <p>Finished your course? Give your books away for free. Someone in your community is looking for exactly what is gathering dust on your shelf.</p>
+  <ul><li><i class="fa-solid fa-circle-check"></i>List a book in under a minute</li><li><i class="fa-solid fa-circle-check"></i>Choose who gets it</li><li><i class="fa-solid fa-circle-check"></i>Help a classmate save money</li></ul>
+  <a href="list-book.html?type=free" class="btn btn-primary"><i class="fa-solid fa-hand-holding-heart"></i>Share a Free Book</a>
+ </div>
+ <div class="shelf-visual"><img class="shelf-photo" src="images/scene-reading.jpg" alt="A student reading a borrowed book in a cosy armchair"><div class="float-card b" style="right:-10px;top:18px"><span class="ic"><i class="fa-solid fa-hand-holding-heart"></i></span><div><strong>Give it away</strong><small>Free for a fellow student</small></div></div><div class="stack" id="stack"></div></div>
+</div></div></section>
+<section class="cta-wrap"><div class="container"><div class="cta"><h2>Got books gathering dust?</h2><p>List them in a minute. Sell, swap or give them away to a student who needs them.</p><div class="hero-btns" style="justify-content:center;margin:0"><a href="list-book.html" class="btn btn-amber"><i class="fa-solid fa-plus"></i>Share a Book</a><a href="#browse" class="btn btn-light">Browse Books</a></div></div></div></section>
+</main>
+
+<footer><div class="container">
+ <div class="foot">
+  <div><a href="#home" class="logo" aria-label="BookBridge home"><i class="fa-solid fa-book-open" aria-hidden="true"></i>BookBridge</a><p>A student platform for finding, exchanging and giving away used books. Books deserve a second chapter.</p></div>
+  <div><h3>Explore</h3><ul><li><a href="#browse">Browse Books</a></li><li><a href="#free-shelf">Free Shelf</a></li><li><a href="#how">How It Works</a></li><li><a href="contact.html">Contact</a></li><li><a href="list-book.html">Share a Book</a></li></ul></div>
+  <div><h3>Account</h3><ul><li><a href="login.html">Log In</a></li><li><a href="register.html">Register</a></li><li><a href="profile.html">My Profile</a></li><li><a href="settings.html">Settings</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+ </div>
+ <p class="copy" style="max-width:none;margin-top:0">&copy; 2026 BookBridge. Books deserve a second chapter.</p>
+</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/books.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

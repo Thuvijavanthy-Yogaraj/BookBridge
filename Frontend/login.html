@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log In – BookBridge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-login">
+<main class="auth-page"><div class="auth-split"><aside class="auth-art" style="--photo:url(../images/hero-lending.jpg),url(https://images.pexels.com/photos/1061130/pexels-photo-1061130.jpeg?auto=compress&cs=tinysrgb&w=1400),url(../images/auth-login.jpg)"><a href="index.html" class="art-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>Back to home</a><span class="art-chip c1"><i class="fa-solid fa-gift"></i>Free books this week</span><span class="art-chip c2"><i class="fa-solid fa-book-open-reader"></i>Your next read is waiting</span><div class="art-bottom"><h2>Welcome back to the shelf</h2><p>Pick up where you left off and find your next read.</p><ul><li><i class="fa-solid fa-tag"></i>Affordable used books</li><li><i class="fa-solid fa-gift"></i>Free books from students</li><li><i class="fa-solid fa-repeat"></i>Swap with your classmates</li></ul><div class="mini-stats"><div><strong>248+</strong><small>Books reused</small></div><div><strong>126+</strong><small>Students helped</small></div><div><strong>85+</strong><small>Free books</small></div></div></div></aside><div class="auth-card">
+ <a href="index.html" class="logo" aria-label="BookBridge home"><i class="fa-solid fa-book-open" aria-hidden="true"></i>BookBridge</a>
+ <h1>Welcome back</h1><p class="sub">Log in to find and share books.</p>
+ <form id="loginForm" novalidate>
+  <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-err"><p class="err" id="email-err"></p></div>
+  <div class="field"><label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password" aria-describedby="password-err"><p class="err" id="password-err"></p></div>
+  <button type="submit" class="btn btn-primary">Log In</button>
+  <p class="form-msg" id="formMsg" role="status" hidden></p>
+ </form>
+ <p class="switch">Don't have an account? <a href="register.html">Register</a></p>
+</div></div></main>
+<script src="js/books.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
