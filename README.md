@@ -18,7 +18,7 @@ BookBridge is a student book exchange. Students can browse used books, buy them,
 
 | Part | Technology |
 |---|---|
-| Frontend | HTML, CSS, JavaScript |
+| Frontend | React 19, React Router 7, Vite |
 | Backend | Java 21, Spring Boot 3.5, Spring Data JPA |
 | Database | MySQL 8 |
 
@@ -26,8 +26,15 @@ BookBridge is a student book exchange. Students can browse used books, buy them,
 
 ```
 BookBridge/
-  Frontend/   website pages, styles, scripts and images
-  backend/    Spring Boot REST API
+  frontend-react/   React website (Vite)
+    public/         favicon
+    src/
+      pages/        Home, Login, Register, Profile, Settings, Contact, ListBook
+      components/   Header, Footer, Browse, BookCard, BookModal, Field, ...
+      context/      AppContext: session, books, favourites, orders
+      lib/          API client, form hook, book helpers
+      data/         categories and sample books
+  backend/          Spring Boot REST API
 ```
 
 ## How to run
@@ -36,6 +43,7 @@ BookBridge/
 
 - Java 21
 - MySQL 8, running on port 3306
+- Node.js 20 or newer (for the React frontend)
 
 ### 1. Set the database password
 
@@ -54,11 +62,32 @@ cd backend
 .\mvnw.cmd spring-boot:run
 ```
 
-On macOS or Linux, use `./mvnw spring-boot:run`. Wait for `Started BackendApplication`. The API runs at `http://localhost:8080/api`.
+On macOS or Linux, use `./mvnw spring-boot:run`. Wait for `Started BackendApplication`. The API runs at `http://localhost:8081/api`.
 
-### 3. Open the website
+### 3. Start the website
 
-Open `Frontend/index.html` in a browser while the backend is running.
+```
+cd frontend-react
+npm install
+npm run dev
+```
+
+The site opens at `http://localhost:5173`. It talks to the API at `http://localhost:8081/api`; to use a different address, copy `.env.example` to `.env` and change `VITE_API_URL`.
+
+To build a production version, run `npm run build`. The finished site is in `frontend-react/dist`. When you host it, send every unknown path to `index.html` so links like `/profile` work on refresh.
+
+### Pages
+
+| Route | Page |
+|---|---|
+| `/` | Home, browse and search |
+| `/login`, `/register` | Log in, create an account |
+| `/profile` | Saved books, orders and listings |
+| `/settings` | Account details and deletion |
+| `/list-book` | Share a book (`?type=free` or `?type=swap` preselects the type) |
+| `/contact` | Contact form |
+
+Old addresses such as `/login.html` redirect to the new routes.
 
 ## API
 
